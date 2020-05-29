@@ -26,6 +26,8 @@ let cxxSettings: [CXXSetting] = [
     .define("REALM_VERSION_PATCH", to: String(coreVersionExtra[0])),
     .define("REALM_VERSION_EXTRA", to: "\"\(coreVersionExtra.count > 1 ? String(coreVersionExtra[1]) : "")\""),
     .define("REALM_VERSION_STRING", to: "\"\(coreVersionStr)\""),
+
+    .unsafeFlags(["-falign-allocation"], nil),
 ]
 
 let package = Package(
